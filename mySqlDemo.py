@@ -1,4 +1,8 @@
-import mysql.connector
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
+import mysql.connect
 
 #创建config存储连接数据库所需的参数
 config = {'host':'127.0.0.1',

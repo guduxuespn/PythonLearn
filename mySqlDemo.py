@@ -1,12 +1,12 @@
-﻿#!/usr/bin/python
+﻿#!/user/bin/python
 # -*- coding : utf-8 -*-
 
-import mysql.connect
+import mysql.connector
 
 #创建config存储连接数据库所需的参数
 config = {'host':'127.0.0.1',
 'user':'root',
-'password':'123456',
+'password':'1234',
 'port':'3306',
 'database':'world',
 'charset':'utf8'}

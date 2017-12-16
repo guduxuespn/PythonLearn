@@ -14,6 +14,7 @@ print ('创建数据库连接成功')
 cursor = conn.cursor()
 print ('创建cursor成功')
 
+//执行sql语句
 cursor.execute ('select * from city t where t.Name =\'SÃ£o Leopoldo\';')
 
 values=cursor.fetchall()

@@ -24,6 +24,8 @@ createTableSql = 'CREATE TABLE IF NOT EXISTS `city` (\
   CONSTRAINT `city_ibfk_1` FOREIGN KEY (`CountryCode`) REFERENCES `country` (`Code`)\
     ) ENGINE=InnoDB AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;'
 
+selectDataSql ='select * from city t where t.Name =\'SÃ£o Leopoldo\';'
+
 conn = mysql.connector.connect(**config)
 print ('创建数据库连接成功')
 
@@ -41,11 +43,11 @@ print('成功切换数据库')
 cursor.execute(createTableSql)
 print('成功创建数据表')
 
-cursor.execute ('select * from city t where t.Name =\'SÃ£o Leopoldo\';')
+cursor.execute (selectDataSql)
 
 values=cursor.fetchall()
 
-print (values)
+print ('取到的结果是：\n',values)
 
 #关闭连接
 cursor.close()

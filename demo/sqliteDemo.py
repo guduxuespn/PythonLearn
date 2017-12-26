@@ -4,8 +4,11 @@
 import sqlite3
 import os
 
-print(os.path.abspath('.\.\sql\insertIntoDataToCity.sql'))
-os.open('././sql/insertIntoDataToCity.sql')
+pathOfInsertIntoDataToCity = os.path.abspath('.\.\sql\insertIntoDataToCity.sql')
+#os.open('././sql/insertIntoDataToCity.sql')
+print(pathOfInsertIntoDataToCity)
+f=open(pathOfInsertIntoDataToCity)
+
 
 conn = sqlite3.connect('mysqliteDemo')
 print ('成功创建conn连接对象')
@@ -24,11 +27,7 @@ createTableSql = 'CREATE TABLE IF NOT EXISTS `city` (\
     );'
 
 
-selectDataSql ='select * from city t where t.Name =\'SÃ£o Leopoldo\';'
-
-
-
-
+selectDataSql ='select * from city t where t.Name =\'Kabul\';'
 
 
 # cursor.execute(createDbSql)
@@ -36,7 +35,11 @@ selectDataSql ='select * from city t where t.Name =\'SÃ£o Leopoldo\';'
 cursor.execute(createTableSql)
 print ('创建数据表成功')
 
-cursor.executescript('insertIntoDataToCity.sql')
+cursor.executescript('.\.\sql\insertIntoDataToCity.sql')
+
+cursor.execute("INSERT INTO `city` (`ID`, `Name`, `CountryCode`, `District`, `Population`) VALUES (1, 'Kabul', 'AFG', 'Kabol', 1780000),(2, 'Qandahar', 'AFG', 'Qandahar', 237500)")
+	 
+
 
 content=cursor.execute (selectDataSql)
 print ('成功查询数据')

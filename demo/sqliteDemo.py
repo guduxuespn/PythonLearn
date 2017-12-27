@@ -16,8 +16,8 @@ print ('成功创建conn连接对象')
 cursor = conn.cursor()
 print ('成功创建cursor对象')
 
-createDbSql = "create database  if not exists `world`; "
-showAllTablesInDb = 'select * from table_master'
+createDbSql = "create database  if not exists `world`;"
+showAllTablesInDb = "select * from sqlite_master t where t.type = 'table' and t.name ='city';"
 useDbSql = 'use world;'
 createTableSql = 'CREATE TABLE IF NOT EXISTS `city` (\
   `ID` int(11) PRIMARY KEY NOT NULL,\
@@ -4124,7 +4124,8 @@ print ('创建数据表成功')
 # """)
 # print('成功删除原有两条数据')
 
-# cursor.executescript(insertIntoDataToCity)
+tables=cursor.execute(showAllTablesInDb)
+print(tables)
 
 print('批量插入数据成功')
 

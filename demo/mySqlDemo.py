@@ -12,7 +12,7 @@ config = {'host':'127.0.0.1',
 'charset':'utf8'}
 
 createDbSql = "create database  if not exists `world`; "
-showAllTablesInDb = 'select * from table_master'
+# showAllTablesInDB = 'select * from table_master'
 useDbSql = 'use world;'
 createTableSql = 'CREATE TABLE IF  NOT EXISTS `city` (\
   `ID` int(11) PRIMARY KEY NOT NULL,\
@@ -4126,6 +4126,8 @@ print('成功切换数据库')
 cursor.execute(createTableSql)
 print('成功创建数据表')
 
+# print('该数据库的数据表信息如下：',cursor.execute(showAllTablesInDB))
+
 cursor.execute(deleteDataForTable)
 print('成功删除表中数据')
 
@@ -4140,3 +4142,4 @@ print ('取到的结果是：\n',values)
 
 #关闭连接
 cursor.close()
+conn.close()

@@ -4126,6 +4126,8 @@ print ('创建数据表成功')
 
 tables=cursor.execute(showAllTablesInDb)
 print(tables)
+tablesInfo=cursor.fetchall()
+print(tablesInfo)
 
 print('批量插入数据成功')
 

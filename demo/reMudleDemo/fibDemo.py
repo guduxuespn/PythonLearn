@@ -1,5 +1,8 @@
+import string
+
 # 该函数可以输出n以内的斐波那契数列
-# 
+#
+
 
 def fib(n):
     a = 0
